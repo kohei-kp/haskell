@@ -10,6 +10,45 @@ sayMe 4 = "Four!"
 sayMe 5 = "Five!"
 sayMe x = "Not between 1 and 5"
 
+factorial :: Int -> Int
+factorial 0 = 1
+factorial n = n * factorial (n - 1)
+
+-- addVectors :: (Double, Double) -> (Double, Double) -> (Double, Double)
+-- addVectors a b = (fst a + fst b, snd a + snd b)
+
+addVectors :: (Double, Double) -> (Double, Double) -> (Double, Double)
+addVectors (x1, y1) (x2, y2) = (x1 + x2, y1 + y2)
+
+first :: (a, b, c) -> a
+first (x, _, _) = x
+
+second :: (a, b, c) -> b
+second (_, y, _) = y
+
+third :: (a, b, c) -> c
+third (_, _, z) = z
+
+head' :: [a] -> a
+head' [] = error "Can't call head on an empty list, dummy!"
+head' (x:_) = x
+
+tell :: (Show a) => [a] -> String
+tell [] = "The list is empty"
+tell (x:[]) = "The list has one element: " ++ show x
+tell (x:y:[]) = "The list has tow elements: " ++ show x ++ " and " ++ show y
+tell (x:y:_) = "This is long, The first two elements are: " ++ show x ++ " and " ++ show y
+
+badAdd :: (Num a) => [a] -> a
+badAdd (x:y:z:[]) = x + y + z
+
+firstLetter :: String -> String
+firstLetter "" = "Empty string, whoops!"
+firstLetter all@(x:xs) = "The first letter of " ++ all ++ " is " ++ [x]
+-- (x:xs)  firstLetter "Dracula"
+-- x = D xs = racula
+-- x:y:ys の場合、 x = D y = r ys = acula
+
 bmiTell :: Double -> Double -> String
 bmiTell weight height
   | bmi <= skinny = "You're underweight, you emo, you!"
