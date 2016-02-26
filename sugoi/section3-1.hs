@@ -105,6 +105,7 @@ main = do
   print $ tell [True, False]
   print $ tell [1..4]
   -- print $ tell [] --なんかエラーなる No instance for (Show a... 型が悪い・・・?
+  print $ tell "" -- 動く []の型?
 
   -- 予期しないリストを与えるとエラー
   -- print $ badAdd [100, 20]
