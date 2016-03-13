@@ -9,3 +9,5 @@ doubleSmallNumber' x = (if x > 100 then x else x*2) + 1
 
 length' xs = sum [1 | _ <- xs]
 removeNonUppercase st = [c | c <- st, c `elem` ['A'..'Z']]
+
+-- コメント追加
